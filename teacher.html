@@ -1,0 +1,23 @@
+<!-- teacher.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Review Page</title>
+</head>
+<body>
+    <h1>Teacher Review Page</h1>
+    <p>Submitted Assignment:</p>
+    <p id="submission"></p>
+
+    <script>
+        // Retrieve and display the submission
+        const submission = localStorage.getItem("submission");
+        document.getElementById("submission").textContent = submission ? submission : "No submissions yet.";
+    </script>
+
+    <!-- Link back to student page -->
+    <p><a href="student.html">Go back to Student Page</a></p>
+</body>
+</html>

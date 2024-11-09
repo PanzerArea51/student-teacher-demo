@@ -1,0 +1,30 @@
+<!-- student.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Submission Page</title>
+</head>
+<body>
+    <h1>Student Submission Page</h1>
+    <form onsubmit="saveSubmission(event)">
+        <label for="assignment">Submit Assignment:</label><br>
+        <input type="text" id="assignment" name="assignment" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Link to teacher page -->
+    <p>After submission, <a href="teacher.html">go to Teacher Page</a> to view submissions.</p>
+
+    <script>
+        function saveSubmission(event) {
+            event.preventDefault(); // Prevent page reload
+            const assignment = document.getElementById("assignment").value;
+            localStorage.setItem("submission", assignment);
+            alert("Assignment submitted!");
+            window.location.href = "teacher.html"; // Redirect to teacher page
+        }
+    </script>
+</body>
+</html>
